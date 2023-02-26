@@ -15,7 +15,7 @@ $container-padding: 16px;
     .field{
         height: 55px;
 
-        .box-email label, .box-password label, .box-name label, .box-description label, .box-eyecatch label {
+        .box-email label, .box-password label, .box-account label {
             position: absolute;
             height: 25px;
             margin-top: 33px;
@@ -28,12 +28,12 @@ $container-padding: 16px;
             color: #979797;
         }
 
-        .box-password, .box-description{
+        .box-email, .box-password, .box-description{
             position: relative;
             margin-top: 33px;
         }
 
-        .box-email input[type="email"], .box-password input[type="password"], .box-name input[type="text"] {
+        .box-email input[type="email"], .box-password input[type="password"], .box-account input[type="text"] {
             border: 0px;
             position: relative;
             margin-top: 30px;
