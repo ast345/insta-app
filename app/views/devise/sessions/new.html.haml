@@ -1,0 +1,16 @@
+= image_tag 'Rectangle.png', class: 'sign_page_img'
+.devise
+  .form-box
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        .box-email
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        .box-password
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "current-password"
+      .actions
+        = f.submit "Log in"

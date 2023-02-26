@@ -1,0 +1,22 @@
+= image_tag 'Rectangle.png', class: 'sign_page_img'
+.devise
+  .form-box
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        .box-account
+          = f.label :account
+          %br/
+          = f.text_field :account_name, autocomplete: "account_name"
+      .field
+        .box-email
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        .box-password
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+      .actions
+        = f.submit "CREATE ACCOUNT"
