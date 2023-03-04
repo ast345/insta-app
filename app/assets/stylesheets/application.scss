@@ -14,6 +14,7 @@
  *= require_self
  */
 @import 'devise';
+@import 'user_page';
 
  
 html {
@@ -63,4 +64,8 @@ html {
  
       color: #000000;
     }
+  }
+
+  .hidden {
+    display: none;
   }

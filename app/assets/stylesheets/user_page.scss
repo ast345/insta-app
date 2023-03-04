@@ -1,0 +1,68 @@
+.user_top{
+
+    .return_page{
+        display: inline-block;
+        width: 19px;
+        margin-right: 94px;
+    }
+    .account_name{
+        display: inline-block;
+
+        font-family: 'Poppins Medium';
+        font-size: 16px;
+
+        line-height: 19px;
+        align-items: center;
+        
+        color: #333A42;
+    }
+
+
+}
+
+.user_info{
+    position: absolute;
+    width: 241px;
+    height: 47px;
+    left: 75px;
+    top: 229px;
+
+    &_box{
+        display: inline-block;
+        margin-right: auto;
+        margin-left: auto;
+        width: 31%;
+        text-align: center;
+    }
+
+    &_num{
+        // display: block;
+        margin: auto;
+        width: fit-content;
+        height: 24px;
+
+        font-family: 'Poppins Medium';
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        
+        color: #333A42;
+    }
+
+    &_tag{
+        // display:block;
+        margin: auto;
+        width: fit-content;
+        height: 23px;
+
+
+        font-family: 'Poppins Medium';
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        
+        color: #9E9E9E;
+    }
+}

@@ -1,0 +1,31 @@
+.container
+    .user_top
+        .return_page
+            = link_to :back do
+                = image_tag 'return.png'
+        .account_name
+            #{@user.account_name}
+    -# = form_with(model: @user, url: user_path, method: 'put', local: true) do |f|
+    -#     %div
+    -#         = f.label :avatar, 'アバター' do
+            
+    = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+        %div
+            = f.label :avatar, 'アバター' do
+                = image_tag 'default-avatar.png'
+        %div
+            = f.file_field :avatar , class: 'hidden'
+    -# %div
+    -#     = f.label :avatar, 'アバター'
+    -# %div
+    -#     = f.file_field :avatar
+    .user_info
+        .user_info_box
+            %p.user_info_num 44
+            %p.user_info_tag Posts
+        .user_info_box
+            %p.user_info_num 110
+            %p.user_info_tag Followers
+        .user_info_box
+            %p.user_info_num 44
+            %p.user_info_tag Followings
