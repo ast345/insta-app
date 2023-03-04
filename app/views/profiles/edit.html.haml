@@ -14,11 +14,7 @@
             = f.label :avatar, 'アバター' do
                 = image_tag 'default-avatar.png'
         %div
-            = f.file_field :avatar , class: 'hidden'
-    -# %div
-    -#     = f.label :avatar, 'アバター'
-    -# %div
-    -#     = f.file_field :avatar
+            = f.file_field :avatar , class: 'hidden uploader'
     .user_info
         .user_info_box
             %p.user_info_num 44
