@@ -1,12 +1,16 @@
 .user_top{
 
     .return_page{
-        display: inline-block;
+        // display: inline-block;
+        float: left;
         width: 19px;
-        margin-right: 94px;
+        margin-right: 80px;
     }
     .account_name{
-        display: inline-block;
+        // display: inline-block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
 
         font-family: 'Poppins Medium';
         font-size: 16px;

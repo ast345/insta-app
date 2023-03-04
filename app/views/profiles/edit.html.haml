@@ -8,11 +8,10 @@
     -# = form_with(model: @user, url: user_path, method: 'put', local: true) do |f|
     -#     %div
     -#         = f.label :avatar, 'アバター' do
-            
     = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
         %div
             = f.label :avatar, 'アバター' do
-                = image_tag 'default-avatar.png'
+                = image_tag @user.avatar_image, class: 'avatar'
         %div
             = f.file_field :avatar , class: 'hidden uploader'
     .user_info
