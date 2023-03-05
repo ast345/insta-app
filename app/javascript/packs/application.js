@@ -18,7 +18,7 @@ import $ from 'jquery'
 // const imagePath = (name) => images(name, true)
 
 window.addEventListener('turbolinks:load', () => {
-    $('input[type=file]').on('change', function (e) {
+    $('.avatar-change').on('change', function (e) {
         console.log(e.target.files);
         if (e.target.files[0].size > 0) {
             $(this).parents('form').submit();
