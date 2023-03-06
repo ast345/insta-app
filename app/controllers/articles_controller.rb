@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
 
     def new
         @article = current_user.articles.build
+        @user = current_user
     end
 
     def create

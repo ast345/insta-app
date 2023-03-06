@@ -1,0 +1,133 @@
+.cancel{
+    float: left;
+
+    font-family: 'Poppins Medium';
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    /* Blue 1 */
+    
+    color: #2F80ED;
+}
+
+.article_header{
+    margin-bottom: 40px;
+
+    &_title{
+        align-items: center;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+
+        font-family: 'Poppins Medium';
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        
+        color: #333A42;
+    }
+}
+
+.post{
+    // display: inline-block;
+    // text-align: right;
+    float: right;
+
+    &_text{
+        font-family: 'Poppins Medium';
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: right;
+        border: none;
+        /* Gray 4 */
+        
+        color: #BDBDBD;
+        background-color: white;
+    }
+}
+
+.article_user{
+    height: 40px;
+    margin-bottom: 30px;
+
+    &_avatar{
+        float: left;
+        width: 40px;
+        height: auto;
+        border-radius: 50%;
+        margin-right: 18px;
+    }
+
+    &_name{
+        display: inline-block;
+        width: fit-content;
+        padding-top: 10px;
+
+        font-family: 'Poppins Medium';
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        
+        color: #333333;
+    }
+}
+
+.box-sentence input[type="text"]{
+    border: 0px;
+    // position: relative;
+    margin-bottom: 30px;
+    width: 343px;
+    height: 34px;
+
+    border-bottom: 1px solid #9E9E9E;
+    caret-color: #2F80ED;
+
+    &::placeholder{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        
+        /* Gray 4 */
+        
+        color: #BDBDBD;
+        
+        mix-blend-mode: normal;
+        opacity: 0.9;
+    }
+}
+
+.box-photos{
+    display: inline-block;
+    width: 73px;
+    height: 24px;
+    text-align: center;
+
+    &-title{
+        display: inline-block;
+        padding-left: 8px;
+        /* Gray 5 */
+        
+        border: 1px solid #E0E0E0;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        /* Gray 2 */
+        
+        color: #4F4F4F;
+    }
+}

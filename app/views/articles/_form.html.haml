@@ -1,13 +1,23 @@
 .container
   - article.errors.full_messages.each do |message|
     %li= message
+
   = form_with(model: article, local: true) do |f|
-    %div
-      =f.label :photos, '写真'
-    %div
-      =f.file_field :photos, :multiple => true
-    %div
-      = f.label :sentence, '文章'
-    %div
-      = f.text_area :sentence
-    = f.submit '保存', class: 'btn-primary'
+    .article_header
+      %div.post
+        = f.submit 'Post', class: 'post_text'
+      = link_to 'Cancel', articles_path, class: 'cancel'
+      %p.article_header_title Status
+    .article_user
+      = image_tag @user.avatar_image, class: 'article_user_avatar'
+      %p.article_user_name #{@user.account_name}
+    .box-sentence
+      = f.text_field :sentence, placeholder: "What's on your mind ?"
+    %label.box-photos
+      %p.box-photos-title + Album
+      =f.file_field :photos, :multiple => true, class: 'hidden'
+    
+    -# %div
+    -#   = f.label :sentence, '文章'
+        -# %div
+        -#   =f.label :photos, '写真'
