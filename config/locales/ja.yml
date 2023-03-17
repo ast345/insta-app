@@ -102,12 +102,12 @@ ja:
         one: 1年
         other: "%{count}年"
     prompts:
-      second: 秒
-      minute: 分
-      hour: 時
-      day: 日
-      month: 月
-      year: 年
+      second: second
+      minute: minute
+      hour: hour
+      day: day
+      month: month
+      year: year
   errors:
     format: "%{attribute}%{message}"
     messages:
