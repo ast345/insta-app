@@ -9,7 +9,11 @@
         %div
           %p.article_name= article.author_name
           %p.post_time= post_time(article.created_at)
-        %p.article_sentence= article.sentence
+      .slider
+        - article.photos.each do |photo|
+          = image_tag photo, class: 'article_photo'
+
+      %p.article_sentence= article.sentence
     -#   .card_content
     -#     .card_title
     -#       = article.title

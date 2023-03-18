@@ -99,6 +99,16 @@
     color: #333333;
 }
 
+
+.slider{
+    max-width: 335px;
+    
+}
+.slider img {
+    height: 225px;
+    object-fit: cover;
+}
+
 .box-sentence input[type="text"]{
     border: 0px;
     // position: relative;
