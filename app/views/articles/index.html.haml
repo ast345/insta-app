@@ -15,7 +15,8 @@
       .article_actions
         = image_tag 'heart-inactive.png',class: 'article_action_icon'
         = image_tag 'comment.png',class: 'article_action_icon'
-        = image_tag 'share.png',class: 'article_action_icon'
+        = link_to "https://twitter.com/share?url=#{ request.url }" do
+          = image_tag 'share.png',class: 'article_action_icon'
 
       %p.article_sentence= article.sentence
     -#   .card_content
