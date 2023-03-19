@@ -15,6 +15,10 @@ class CommentsController < ApplicationController
         end
     end
 
+    def show
+        @comments = @article.comments
+    end
+
     private
     def comment_params
 	    params.require(:comment).permit(:content)
