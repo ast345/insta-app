@@ -1,5 +1,11 @@
-.article
-  %h2 コメント一覧
-  - @comments.each do |comment|
-    .article_comment
-      %p= comment.content
+.container
+    .user_top
+        .return_page
+            = link_to :back do
+                = image_tag 'return.png'
+        .account_name
+            Comment
+    
+    - @comments.each do |comment|
+        .article_comment
+            %p= comment.content
