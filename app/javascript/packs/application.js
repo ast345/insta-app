@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require('jquery')
+require("./slick")
 
 
 import $ from 'jquery'
@@ -18,7 +20,7 @@ import $ from 'jquery'
 // const imagePath = (name) => images(name, true)
 
 window.addEventListener('turbolinks:load', () => {
-    $('input[type=file]').on('change', function (e) {
+    $('.avatar-change').on('change', function (e) {
         console.log(e.target.files);
         if (e.target.files[0].size > 0) {
             $(this).parents('form').submit();
@@ -36,4 +38,13 @@ window.addEventListener('turbolinks:load', () => {
     //   $('.submit-botton').removeClass('hidden')
     // });
 });
+
+// document.addEventListener('turbolinks:load', () => {
+//     const dataset = $('#article-show').data()
+//     const articleId = dataset.articleId
+//     axios.get(`/articles/${articleId}/like`)
+//         /then((response) => {
+//             console.log(response)
+//         })
+// })
 
