@@ -3,7 +3,7 @@
     = image_tag 'post.png'
 
   - @articles.each do |article|
-    .card
+    .card#article-show{data: {article_id: article.id}}
       .card_detail
         = image_tag article.user.avatar_image, class: 'article_user_avatar'
         %div
@@ -13,18 +13,15 @@
         - article.photos.each do |photo|
           = image_tag photo, class: 'article_photo'
       .article_actions
-        = image_tag 'heart-inactive.png',class: 'article_action_icon'
+        - if user_signed_in?
+          .hidden.active-heart
+            = image_tag 'heart-active.png',class: 'article_action_icon'
+          .hidden.inactive-heart
+            = image_tag 'heart-inactive.png',class: 'article_action_icon'
         = image_tag 'comment.png',class: 'article_action_icon'
         = link_to "https://twitter.com/share?url=#{ request.url }" do
           = image_tag 'share.png',class: 'article_action_icon'
 
       %p.article_sentence= article.sentence
-    -#   .card_content
-    -#     .card_title
-    -#       = article.title
-    -#     .card_heart
-    -#       = image_tag 'heart.svg'
-    -#       %span= article.like_count
-    -#   - if article.eyecatch.attached?
-    -#     .card_image
-    -#       = image_tag article.eyecatch
+
+  = javascript_pack_tag 'article'

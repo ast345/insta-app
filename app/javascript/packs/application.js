@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-// require("turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
@@ -38,4 +38,13 @@ window.addEventListener('turbolinks:load', () => {
     //   $('.submit-botton').removeClass('hidden')
     // });
 });
+
+// document.addEventListener('turbolinks:load', () => {
+//     const dataset = $('#article-show').data()
+//     const articleId = dataset.articleId
+//     axios.get(`/articles/${articleId}/like`)
+//         /then((response) => {
+//             console.log(response)
+//         })
+// })
 

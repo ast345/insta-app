@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :articles, dependent: :destroy
+  has_many :likes, dependent: :destroy
   
 
   # Include default devise modules. Others available are:
@@ -11,6 +12,10 @@ class User < ApplicationRecord
 
   def prepare_profile
     profile || build_profile
+  end
+
+  def has_liked?(article)
+    likes.exists?(article_id: article.id)
   end
 
   def avatar_image
