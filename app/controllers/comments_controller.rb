@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     def index
         article = Article.find(params[:article_id])
         comments = article.comments
-        render json: comments
+        render json: comments, each_serializer: CommentSerializer, include: { user: [:profile] }
     end
 
     def create
@@ -23,7 +23,8 @@ class CommentsController < ApplicationController
     end
 
     def show
-        @comments = @article.comments
+        comments = article.comments
+        render json: comments, each_serializer: CommentSerializer, include: { user: [ :profile] }
     end
 
     private
