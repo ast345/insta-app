@@ -21,26 +21,26 @@ const handleHeartDisplay = (hasLiked) => {
 //     })
 //   }
   
-//   const appendNewComment = (comment) => {
-//     $('.comments-container').append(
-//       `<div class="article_comment"><p>${comment.content}</p></div>`
-//     )
-//   }
+  const appendNewComment = (comment) => {
+    $('.comments-container').append(
+      `<div class="article_comment"><p>${comment.content}</p></div>`
+    )
+  }
 
-  document.addEventListener('turbolinks:load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const dataset = $('#article-show').data()
     const articleId = dataset.articleId
 
-    // axios.get(`/api/articles/${articleId}/comments`)
-    //     .then((response) => {
-    //         const comments = response.data
-    //         comments.forEach((comment) => {
-    //             appendNewComment(comment)
-    //           })
-    //     })
-    //     .catch((error)=> {
-    //         window.alert('失敗')
-    //     })
+    axios.get(`/articles/${articleId}/comments`)
+        .then((response) => {
+            const comments = response.data
+            comments.forEach((comment) => {
+                appendNewComment(comment)
+              })
+        })
+        .catch((error)=> {
+            window.alert('失敗')
+        })
     
     // handleCommentForm()
     
