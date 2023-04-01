@@ -23,7 +23,7 @@ const handleHeartDisplay = (hasLiked) => {
   
   const appendNewComment = (comment) => {
     $('.comments-container').append(
-      `<div class="article_comment"><p>${comment.content}</p></div>`
+      `<div class="article_comment"><p>${comment.user.account_name}</p><p>${comment.content}</p></div>`
     )
   }
 
