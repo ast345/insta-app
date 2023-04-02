@@ -7,4 +7,9 @@
             Comment
     
     .comments-container
+    .comment-text-area
+        = text_area_tag :comment_content, '', class: 'sm'
+        .btn-secondary.add-comment-button
+            = image_tag 'comment-post.png'
+
 = javascript_pack_tag 'article'

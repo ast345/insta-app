@@ -14,12 +14,8 @@ class CommentsController < ApplicationController
         article = Article.find(params[:article_id])
         @comment = current_user.comments.new(comment_params)
         @comment.article_id = article.id
-        if @comment.save
-            redirect_to article_path(article), notice: 'コメントを追加'
-        else
-            flash.now[:error] = '保存できませんでした'
-            render :new
-        end
+        @comment.save!
+        render json: @comment, each_serializer: CommentSerializer, include: { user: [:profile] }
     end
 
     def show
