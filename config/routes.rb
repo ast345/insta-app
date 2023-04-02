@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   resources :articles do
     resource :like, only: [:create, :destroy, :show]
+    resources :comments, only: [:index, :new, :create]
   end
 end

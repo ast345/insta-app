@@ -1,0 +1,15 @@
+.container#article-show{data: {article_id: @article.id}}
+    .user_top
+        .return_page
+            = link_to :back do
+                = image_tag 'return.png'
+        .account_name
+            Comment
+    
+    .comments-container
+    .comment-text-area
+        = text_area_tag :comment_content, '', class: 'sm'
+        .btn-secondary
+            = image_tag 'comment-post.png', class: 'add-comment-button'
+
+= javascript_pack_tag 'article'

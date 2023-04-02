@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
@@ -19,7 +18,7 @@ import $ from 'jquery'
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-window.addEventListener('turbolinks:load', () => {
+window.addEventListener('DOMContentLoaded', () => {
     $('.avatar-change').on('change', function (e) {
         console.log(e.target.files);
         if (e.target.files[0].size > 0) {
