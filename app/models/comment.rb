@@ -7,6 +7,10 @@ class Comment < ApplicationRecord
 
     private
     def send_email
-        CommentMailer.new_comment(user).deliver_later
+        # users = User.all
+        # users.each do |userdb|
+        # if comment.content.include?("happy")
+        CommentMailer.new_comment(user, content).deliver_later
+        # end
     end
 end
