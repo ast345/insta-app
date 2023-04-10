@@ -1,5 +1,5 @@
-%p @#{@article.user.account_name}さん
-%p あなたの記事に以下のコメントがつきました。
+%p @#{@commented_user.account_name}さん
+%p あなたに#{@comment_user.account_name}さんがコメントしました。
 
 %p #{@content}
 = link_to 'コメントを確認する', article_url(@article)
