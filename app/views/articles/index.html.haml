@@ -5,7 +5,8 @@
   - @articles.each do |article|
     .card{data: {article_id: article.id}}
       .card_detai
-        = image_tag article.user.avatar_image, class: 'article_user_avatar'
+        =link_to account_path(article.user) do
+          = image_tag article.user.avatar_image, class: 'article_user_avatar'
         %div
           %p.article_name= article.author_name
           %p.post_time= post_time(article.created_at)
