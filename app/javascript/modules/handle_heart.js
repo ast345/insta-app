@@ -6,8 +6,8 @@ const listenInactiveHeartEvent = (articleId) => {
         axios.post(`/articles/${articleId}/like`)
             .then((response) => {
                 if (response.data.status === 'ok') {
-                    $('.active-heart').removeClass('hidden')
-                    $('.inactive-heart').addClass('hidden')
+                    $('.active-heart' + `#${articleId}`).removeClass('hidden')
+                    $('.inactive-heart' + `#${articleId}`).addClass('hidden')
             }
         })
             .catch((e) => {
@@ -19,14 +19,14 @@ const listenInactiveHeartEvent = (articleId) => {
 }
 
 const listenActiveHeartEvent = (articleId) => {
-$('.active-heart').on('click', () => {
-    axios.delete(`/articles/${articleId}/like`)
-        .then((response) => {
-            if (response.data.status === 'ok') {
-                $('.active-heart').addClass('hidden')
-                $('.inactive-heart').removeClass('hidden')
-        }
-    })
+    $('.active-heart').on('click', () => {
+        axios.delete(`/articles/${articleId}/like`)
+            .then((response) => {
+                if (response.data.status === 'ok') {
+                    $('.active-heart' + `#${articleId}`).addClass('hidden')
+                    $('.inactive-heart' + `#${articleId}`).removeClass('hidden')
+            }
+        })
         .catch((e) => {
         window.alert('Error')
         console.log(e)
