@@ -2,12 +2,14 @@ import $ from 'jquery'
 import axios from 'modules/axios'
 
 const listenInactiveHeartEvent = (articleId) => {
-    $('.inactive-heart').on('click', () => {
+    const selector = `.inactive-heart`+ `#${articleId}`
+    console.log(selector)
+    $(`#${articleId}` + `.inactive-heart`).on('click', () => {
         axios.post(`/articles/${articleId}/like`)
             .then((response) => {
                 if (response.data.status === 'ok') {
-                    $('.active-heart' + `#${articleId}`).removeClass('hidden')
-                    $('.inactive-heart' + `#${articleId}`).addClass('hidden')
+                    $(`#${articleId}` + `.active-heart`).removeClass('hidden')
+                    $(`#${articleId}` + `.inactive-heart`).addClass('hidden')
             }
         })
             .catch((e) => {
@@ -19,12 +21,12 @@ const listenInactiveHeartEvent = (articleId) => {
 }
 
 const listenActiveHeartEvent = (articleId) => {
-    $('.active-heart').on('click', () => {
+    $(`#${articleId}`+`.active-heart`).on('click', () => {
         axios.delete(`/articles/${articleId}/like`)
             .then((response) => {
                 if (response.data.status === 'ok') {
-                    $('.active-heart' + `#${articleId}`).addClass('hidden')
-                    $('.inactive-heart' + `#${articleId}`).removeClass('hidden')
+                    $(`#${articleId}` + `.active-heart`).addClass('hidden')
+                    $(`#${articleId}` + `.inactive-heart`).removeClass('hidden')
             }
         })
         .catch((e) => {

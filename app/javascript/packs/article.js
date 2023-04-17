@@ -8,9 +8,9 @@ import {
 
 const handleHeartDisplay = (hasLiked, articleId) => {
     if (hasLiked) {
-      $(`.active-heart`).removeClass('hidden')
+      $(`#${articleId}` + `.active-heart`).removeClass('hidden')
     } else {
-      $(`.inactive-heart`).removeClass('hidden')
+      $(`#${articleId}` + `.inactive-heart`).removeClass('hidden')
     }
   }
 
