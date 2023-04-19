@@ -1,1 +1,19 @@
-= @user.email
+.container
+    .user_top
+        .return_page
+            = link_to :back do
+                = image_tag 'return.png'
+        .account_name
+            #{@user.account_name}
+    %div
+        = image_tag @user.avatar_image, class: 'avatar'
+    .user_info
+        .user_info_box
+            %p.user_info_num 44
+            %p.user_info_tag Posts
+        .user_info_box
+            %p.user_info_num 110
+            %p.user_info_tag Followers
+        .user_info_box
+            %p.user_info_num 44
+            %p.user_info_tag Followings
