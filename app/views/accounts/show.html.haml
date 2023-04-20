@@ -17,3 +17,8 @@
         .user_info_box
             %p.user_info_num 44
             %p.user_info_tag Followings
+    .user_photos
+        - @articles.each do |article|
+            .slider
+                - article.photos.each do |photo|
+                    = image_tag photo, class: 'article_photo'
