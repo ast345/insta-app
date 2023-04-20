@@ -5,6 +5,13 @@
                 = image_tag 'return.png'
         .account_name
             #{@user.account_name}
+        %div.user_top_actionButton 
+            - if @user == current_user
+                = link_to 'Edit', edit_profile_path
+            - else
+                = link_to 'Follow', account_follows_path(@user), data: {method: 'post'}, class: 'user_top_actionButton_text'
+            -# - elseif current_user&.has_followed?(user)
+            -#     %p フォロー済み
     %div
         = image_tag @user.avatar_image, class: 'avatar'
     .user_info
