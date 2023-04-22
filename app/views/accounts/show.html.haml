@@ -5,11 +5,14 @@
                 = image_tag 'return.png'
         .account_name
             #{@user.account_name}
-        %div.user_top_actionButton 
+        %div.user_top_actionButton
             - if @user == current_user
                 = link_to 'Edit', edit_profile_path
             - else
-                = link_to 'Follow', account_follows_path(@user), data: {method: 'post'}, class: 'user_top_actionButton_text'
+                - if current_user&.has_followed?(@user)
+                    = link_to 'Unfollow', account_unfollows_path(@user), data: {method: 'post'}, class: 'user_top_actionButton_text'
+                - else
+                    = link_to 'Follow', account_follows_path(@user), data: {method: 'post'}, class: 'user_top_actionButton_text'
             -# - elseif current_user&.has_followed?(user)
             -#     %p フォロー済み
     %div
