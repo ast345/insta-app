@@ -10,6 +10,7 @@ require('jquery')
 require("./slick")
 
 
+import axios from 'axios'
 import $ from 'jquery'
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -19,11 +20,37 @@ import $ from 'jquery'
 // const imagePath = (name) => images(name, true)
 
 window.addEventListener('DOMContentLoaded', () => {
+    
     $('.avatar-change').on('change', function (e) {
         console.log(e.target.files);
         if (e.target.files[0].size > 0) {
             $(this).parents('form').submit();
         }
+    });
+    
+    const dataset = $('#account-show').data()
+    const accountId = dataset.accountId
+
+    $('.unfollow-button').on('click', () =>{
+        axios.post(`/accounts/${accountId}/unfollows`)
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((e) => {
+                window.alert('Error')
+                console.log(e)
+            })
+    });
+
+    $('.follow-button').on('click', () =>{
+        axios.post(`/accounts/${accountId}/follows`)
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((e) => {
+                window.alert('Error')
+                console.log(e)
+            })
     });
     // const uploader = document.querySelector('.uploader');
     // uploader.addEventListener('change', (e) => {

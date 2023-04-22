@@ -76,5 +76,4 @@ const handleHeartDisplay = (hasLiked, articleId) => {
 
 
 
-
 })
