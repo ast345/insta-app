@@ -28,30 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    const dataset = $('#account-show').data()
-    const accountId = dataset.accountId
 
-    $('.unfollow-button').on('click', () =>{
-        axios.post(`/accounts/${accountId}/unfollows`)
-            .then((response) => {
-                console.log(response)
-            })
-            .catch((e) => {
-                window.alert('Error')
-                console.log(e)
-            })
-    });
-
-    $('.follow-button').on('click', () =>{
-        axios.post(`/accounts/${accountId}/follows`)
-            .then((response) => {
-                console.log(response)
-            })
-            .catch((e) => {
-                window.alert('Error')
-                console.log(e)
-            })
-    });
     // const uploader = document.querySelector('.uploader');
     // uploader.addEventListener('change', (e) => {
     //   const file = uploader.files[0];

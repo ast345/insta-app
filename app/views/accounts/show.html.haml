@@ -1,4 +1,4 @@
-.container#account-show{data: {account_id: @user.id}}
+.container#account-show{data: {account_id: @user.id, current_user_id: current_user.id}}
     .user_top
         .return_page
             = link_to :back do
@@ -9,11 +9,11 @@
             - if @user == current_user
                 = link_to 'Edit', edit_profile_path, class: 'user_top_actionButton_text'
             - else
-                - if current_user&.has_followed?(@user)
-                    %p.user_top_actionButton_text.unfollow-button Unfollow
+                %p.user_top_actionButton_text.unfollow-button.hidden Unfollow
+                %p.user_top_actionButton_text.follow-button.hidden Follow
+                -# - if current_user&.has_followed?(@user)
                     -# = link_to 'Unfollow', account_unfollows_path(@user), data: {method: 'post'}, class: 'user_top_actionButton_text unfollow-button'
-                - else
-                    %p.user_top_actionButton_text.follow-button Follow
+                -# - else
                     -# = link_to 'Follow', account_follows_path(@user), data: {method: 'post'}, class: 'user_top_actionButton_text follow-button'
             -# - elseif current_user&.has_followed?(user)
             -#     %p フォロー済み
@@ -34,3 +34,5 @@
             .slider
                 - article.photos.each do |photo|
                     = image_tag photo, class: 'article_photo'
+
+= javascript_pack_tag 'account'
