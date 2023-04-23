@@ -1,4 +1,4 @@
-.container#account-show{data: {account_id: @user.id, current_user_id: current_user.id}}
+.container#account-show{data: {account_id: @user.id, current_user_id: current_user.id, follower_count: @follower_count}}
     .user_top
         .return_page
             = link_to :back do
@@ -24,10 +24,10 @@
             %p.user_info_num 44
             %p.user_info_tag Posts
         .user_info_box
-            %p.user_info_num #{@follower_count}
+            %p.user_info_num.follower_count #{@follower_count}
             %p.user_info_tag Followers
         .user_info_box
-            %p.user_info_num #{@following_count}
+            %p.user_info_num.following_count #{@following_count}
             %p.user_info_tag Followings
     .user_photos
         - @articles.each do |article|
