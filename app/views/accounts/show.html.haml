@@ -24,11 +24,13 @@
             %p.user_info_num 44
             %p.user_info_tag Posts
         .user_info_box
-            %p.user_info_num.follower_count #{@follower_count}
-            %p.user_info_tag Followers
+            = link_to account_followers_path(@user) ,class: 'follower_link' do
+                %p.user_info_num.follower_count #{@follower_count}
+                %p.user_info_tag Followers
         .user_info_box
-            %p.user_info_num.following_count #{@following_count}
-            %p.user_info_tag Followings
+            = link_to account_followings_path(@user),class: 'following_link' do
+                %p.user_info_num.following_count #{@following_count}
+                %p.user_info_tag Followings
     .user_photos
         - @articles.each do |article|
             .slider
