@@ -6,6 +6,7 @@
 
 .user_top{
     height: 30px;
+    margin-bottom: 50px;
 
     &_actionButton{
         float: right;
@@ -29,8 +30,27 @@
     }
 }
 
-.follower_link{
+.follower{
+    &_link{
     text-decoration: none;
+    }
+
+    &_box{
+        margin-bottom: 30px;
+        height: 73px;
+        border-bottom: 1px solid #EEEEEE;
+    }
+
+    &_name{
+        font-family: 'Poppins Medium';
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        
+        color: #333333;
+        
+    }
 }
 
 .following_link{

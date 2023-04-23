@@ -5,3 +5,8 @@
                 = image_tag 'return.png'
         .account_name
             Followers
+    .followers
+        - @followers.each do |follower|
+            .follower_box
+                = image_tag follower.avatar_image ,class: 'article_user_avatar'
+                %p.follower_name= follower.account_name
