@@ -1,0 +1,29 @@
+.container
+  = link_to new_article_path do
+    = image_tag 'post.png'
+
+  - @articles.each do |article|
+    .card{data: {article_id: article.id}}
+      .card_detai
+        =link_to account_path(article.user) do
+          = image_tag article.user.avatar_image, class: 'article_user_avatar'
+        %div
+          %p.article_name= article.author_name
+          %p.post_time= post_time(article.created_at)
+      .slider
+        - article.photos.each do |photo|
+          = image_tag photo, class: 'article_photo'
+      .article_actions
+        - if user_signed_in?
+          .hidden.active-heart{id: "#{article.id}"}
+            = image_tag 'heart-active.png',class: 'article_action_icon'
+          .hidden.inactive-heart{id: "#{article.id}"}
+            = image_tag 'heart-inactive.png',class: 'article_action_icon'
+        =link_to article_path(article) do
+          = image_tag 'comment.png',class: 'article_action_icon'
+        = link_to "https://twitter.com/share?url=#{ request.url }" do
+          = image_tag 'share.png',class: 'article_action_icon'
+
+      %p.article_sentence= article.sentence
+
+  = javascript_pack_tag 'article'
