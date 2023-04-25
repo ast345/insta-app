@@ -1,22 +1,16 @@
 .container#account-show{data: {account_id: @user.id, current_user_id: current_user.id, follower_count: @follower_count}}
     .user_top
-        .return_page
-            = link_to :back do
-                = image_tag 'return.png'
-        .account_name
-            #{@user.account_name}
         %div.user_top_actionButton
             - if @user == current_user
                 = link_to 'Edit', edit_profile_path, class: 'user_top_actionButton_text'
             - else
                 %p.user_top_actionButton_text.unfollow-button.hidden Unfollow
                 %p.user_top_actionButton_text.follow-button.hidden Follow
-                -# - if current_user&.has_followed?(@user)
-                    -# = link_to 'Unfollow', account_unfollows_path(@user), data: {method: 'post'}, class: 'user_top_actionButton_text unfollow-button'
-                -# - else
-                    -# = link_to 'Follow', account_follows_path(@user), data: {method: 'post'}, class: 'user_top_actionButton_text follow-button'
-            -# - elseif current_user&.has_followed?(user)
-            -#     %p フォロー済み
+        .return_page
+            = link_to :back do
+                = image_tag 'return.png'
+        .account_name
+            #{@user.account_name}
     %div
         = image_tag @user.avatar_image, class: 'avatar'
     .user_info

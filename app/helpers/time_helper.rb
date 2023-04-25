@@ -1,3 +1,5 @@
-def post_time(datetime)
-    time_ago_in_words(datetime) + ' ago'
+module TimeHelper
+    def post_time(datetime)
+        time_ago_in_words(datetime) + ' ago'
+    end
 end
