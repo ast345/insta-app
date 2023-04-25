@@ -8,9 +8,9 @@ import {
 
 const handleHeartDisplay = (hasLiked, articleId) => {
     if (hasLiked) {
-      $(`.active-heart`).removeClass('hidden')
+      $(`#${articleId}` + `.active-heart`).removeClass('hidden')
     } else {
-      $(`.inactive-heart`).removeClass('hidden')
+      $(`#${articleId}` + `.inactive-heart`).removeClass('hidden')
     }
   }
 
@@ -38,42 +38,42 @@ const handleHeartDisplay = (hasLiked, articleId) => {
 
 
     })
-    // const dataset = $('#article-show').data()
-    // const articleId = dataset.articleId
+    
+    const dataset = $('#article-show').data()
+    const articleId = dataset.articleId
 
-    // axios.get(`/articles/${articleId}/comments`)
-    //     .then((response) => {
-    //         const comments = response.data
-    //         comments.forEach((comment) => {
-    //             appendNewComment(comment)
-    //           })
-    //     })
-    //     .catch((error)=> {
-    //         window.alert('失敗')
-    //     })
+    axios.get(`/articles/${articleId}/comments`)
+        .then((response) => {
+            const comments = response.data
+            comments.forEach((comment) => {
+                appendNewComment(comment)
+              })
+        })
+        .catch((error)=> {
+            window.alert('失敗')
+        })
 
-    // $('.add-comment-button').on('click', () => {
-    //     const content = $('#comment_content').val()
-    //     if (!content) {
-    //         window.alert('コメントを入力してください')
-    //     } else {
-    //         axios.post(`/articles/${articleId}/comments`, {
-    //         comment: {content: content}
-    //         })
-    //         .then((res) => {
-    //             const comment = res.data
-    //             appendNewComment(comment)
-    //             $('#comment_content').val('')
-    //         })
-    //     }
-    //     })
+    $('.add-comment-button').on('click', () => {
+        const content = $('#comment_content').val()
+        if (!content) {
+            window.alert('コメントを入力してください')
+        } else {
+            axios.post(`/articles/${articleId}/comments`, {
+            comment: {content: content}
+            })
+            .then((res) => {
+                const comment = res.data
+                appendNewComment(comment)
+                $('#comment_content').val('')
+            })
+        }
+        })
 
         // axios.get(`/articles/${articleId}/like`)
         // .then((response) => {
         //       const hasLiked = response.data.hasLiked
         //       handleHeartDisplay(hasLiked)
         // })
-
 
 
 

@@ -1,0 +1,58 @@
+.user_photos{
+    position: absolute;
+    top: 318px;
+    margin-bottom: 102px;
+}
+
+.user_top{
+    height: 30px;
+    margin-bottom: 50px;
+
+    &_actionButton{
+        float: right;
+        display: inline-block;
+
+
+        &_text{
+            font-family: 'Poppins Medium';
+            font-size: 16px;
+            line-height: 19px;
+            display: flex;
+            align-items: center;
+            text-align: right;
+            border: none;
+            /* Gray 4 */
+            
+            color: #BDBDBD;
+            background-color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+.follower{
+    &_link{
+    text-decoration: none;
+    }
+
+    &_box{
+        margin-bottom: 30px;
+        height: 73px;
+        border-bottom: 1px solid #EEEEEE;
+    }
+
+    &_name{
+        font-family: 'Poppins Medium';
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        
+        color: #333333;
+        
+    }
+}
+
+.following_link{
+    text-decoration: none;
+}
