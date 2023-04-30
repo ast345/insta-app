@@ -18,10 +18,12 @@ RSpec.describe 'Articles', type: :request do
 			end
 
 	    it '記事が保存される' do
-				article_params = attributes_for(:article)
-	      post articles_path({article: article_params})
+        file_path = Rails.root.join('spec', 'fixtures', 'files', 'IMG_1016.JPG')
+        file = fixture_file_upload(file_path, 'image/jpg')
+        article_params = {"sentence" => "テスト投稿２", "photos" => [file]}
+	      post articles_path, params: { article: article_params }
 	      expect(response).to have_http_status(302)
-				expect(Article.last.sentence.body.to_plain_text).to eq(article_params[:sentence])
+				expect(Article.last.sentence).to eq(article_params["sentence"])
 	    end
 		end
   end
