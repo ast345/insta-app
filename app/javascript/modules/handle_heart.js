@@ -5,7 +5,7 @@ const listenInactiveHeartEvent = (articleId) => {
     const selector = `.inactive-heart`+ `#${articleId}`
     console.log(selector)
     $(`#${articleId}` + `.inactive-heart`).on('click', () => {
-        axios.post(`/articles/${articleId}/like`)
+        axios.post(`/api/articles/${articleId}/like`)
             .then((response) => {
                 if (response.data.status === 'ok') {
                     $(`#${articleId}` + `.active-heart`).removeClass('hidden')
@@ -22,7 +22,7 @@ const listenInactiveHeartEvent = (articleId) => {
 
 const listenActiveHeartEvent = (articleId) => {
     $(`#${articleId}`+`.active-heart`).on('click', () => {
-        axios.delete(`/articles/${articleId}/like`)
+        axios.delete(`/api/articles/${articleId}/like`)
             .then((response) => {
                 if (response.data.status === 'ok') {
                     $(`#${articleId}` + `.active-heart`).addClass('hidden')
