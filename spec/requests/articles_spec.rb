@@ -26,5 +26,15 @@ RSpec.describe 'Articles', type: :request do
 				expect(Article.last.sentence).to eq(article_params["sentence"])
 	    end
 		end
+
+    context 'ログインしていない場合' do
+      it 'ログイン画面に遷移' do
+        file_path = Rails.root.join('spec', 'fixtures', 'files', 'IMG_1016.JPG')
+        file = fixture_file_upload(file_path, 'image/jpg')
+        article_params = {"sentence" => "テスト投稿２", "photos" => [file]}
+        post articles_path, params: { article: article_params }
+	      expect(response).to redirect_to(new_user_session_path)
+      end
+    end
   end
 end
