@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
   gem 'activestorage-validator'
+  gem 'dotenv-rails'
 end
 
 group :development do
