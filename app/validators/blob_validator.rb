@@ -4,5 +4,4 @@ class BlobValidator < ActiveModel::Validator
         record.errors.add :blob, 'needs to be an image'
       end
     end
-  end
-  
+end
