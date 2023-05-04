@@ -29,7 +29,6 @@ gem 'psych', '~> 3.1'
 
 gem 'active_decorator'
 gem 'active_model_serializers'
-gem 'active_storage'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
