@@ -6,4 +6,5 @@ class Article < ApplicationRecord
     # scope :featured, order('likes_count DESC')
     validates :sentence, length: {minimum: 2}
     validates :photos, presence: true, blob: { content_type: :image }
+    validates_with BlobValidator
 end
