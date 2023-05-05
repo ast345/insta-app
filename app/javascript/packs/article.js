@@ -15,8 +15,10 @@ const handleHeartDisplay = (hasLiked, articleId) => {
   }
 
   const appendNewComment = (comment) => {
+    const avatarUrl = comment.user.profile && comment.user.profile.avatar_url ? comment.user.profile.avatar_url : '/assets/default-avatar.png';
+
     $('.comments-container').append(
-      `<div class="article_comment"><img src="${comment.user.profile.avatar_url}" class='article_user_avatar'><p class='comment_account_name'>${comment.user.account_name}</p><p class='comment_content'>${comment.content}</p></div>`
+      `<div class="article_comment"><img src="${avatarUrl}" class='article_user_avatar'><p class='comment_account_name'>${comment.user.account_name}</p><p class='comment_content'>${comment.content}</p></div>`
     )
   }
 
