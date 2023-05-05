@@ -42,7 +42,7 @@ const handleHeartDisplay = (hasLiked, articleId) => {
     const dataset = $('#article-show').data()
     const articleId = dataset.articleId
 
-    axios.get(`/api/articles/${articleId}/comments`)
+    axios.get(`//${window.location.host}/api/articles/${articleId}/comments`)
         .then((response) => {
             const comments = response.data
             comments.forEach((comment) => {
